@@ -61,3 +61,26 @@ if(mysqli_query($link, $sql)){
 
 mysqli_close($link);
 ```
+## multi data insertion
+```
+<?php
+
+$link = mysqli_connect("localhost", "root", "","demo");
+
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+
+$sql = "INSERT INTO persons (first_name, last_name, email) 
+VALUES
+ ('ee','ee','ajsdh@gmail.com'),
+ ('sagam','peee','eggg3cc@gmail.com'),
+ ('eslkrih','sip','ekresh3cc@gmail.com')";
+if(mysqli_query($link, $sql)){
+    echo "data inserted successfully.";
+} else{
+    echo "ERROR: Could not execute $sql. " . mysqli_error($link);
+}
+
+mysqli_close($link);
+```
