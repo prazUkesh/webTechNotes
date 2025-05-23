@@ -135,3 +135,23 @@ if ($result = mysqli_query($link, $sql)) {
 mysqli_close($link);
 ?>  
 ```
+
+## updating
+```
+<?php
+
+$link = mysqli_connect("localhost","root","","demo");
+
+if($link===false){
+    die("EOOR:Could not Connect.".mysqli_connect_error());
+} 
+
+$sql="UPDATE persons SET email='peeee@gmail.com' WHERE id=1";
+if(mysqli_query($link,$sql)){
+    echo"records updated successfully";
+}
+else{
+echo"ERROR: Could not able to execute $sql.".mysqli_error($link);
+}
+//Close connection
+```
