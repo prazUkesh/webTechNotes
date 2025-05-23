@@ -84,3 +84,51 @@ if(mysqli_query($link, $sql)){
 
 mysqli_close($link);
 ```
+
+```
+
+<?php
+// Attempt MySQL server connection.
+$link = mysqli_connect("localhost", "root", "", "demo");
+
+// Check connection
+if ($link === false) {
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+
+// Corrected SQL query (SELECT needs column names)
+$sql = "SELECT id, first_name, last_name, email FROM persons";
+
+if ($result = mysqli_query($link, $sql)) {
+    if (mysqli_num_rows($result) > 0) {
+        echo "<table border='1'>";
+        echo "<tr>";
+        echo "<th>id</th>";
+        echo "<th>first_name</th>";
+        echo "<th>last_name</th>";
+        echo "<th>email</th>";
+        echo "</tr>";
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>";
+            echo "<td>" . $row['id'] . "</td>";
+            echo "<td>" . $row['first_name'] . "</td>";
+            echo "<td>" . $row['last_name'] . "</td>";
+            echo "<td>" . $row['email'] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+    } else {
+        echo "No records found.";
+    }
+
+    // Free resudglt set
+    mysqli_frege_result($result);
+} else {
+    echo "ERROR: Coeuld not execute $sql. " . mysqli_error($link);
+}
+
+// Close connection
+mysqli_close($link);
+?>
+```
