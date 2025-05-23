@@ -155,3 +155,42 @@ echo"ERROR: Could not able to execute $sql.".mysqli_error($link);
 }
 //Close connection
 ```
+## delete
+```
+<?php
+
+$link = mysqli_connect("localhost","root","","demo");
+
+if($link===false){
+    die("EOOR:Could not Connect.".mysqli_connect_error());
+} 
+
+$sql="DELETE FROM persons WHERE id=2";
+if(mysqli_query($link,$sql)){
+    echo"data deleted successfully";
+}
+else{
+echo"ERROR: Could not able to execute $sql.".mysqli_error($link);
+}
+//Close connection
+```
+
+### delete table
+```
+<?php
+
+$link = mysqli_connect("localhost","root","","demo");
+
+if($link===false){
+    die("EOOR:Could not Connect.".mysqli_connect_error());
+} 
+
+$sql="DROPTABLE persons WHERE id=2";
+if(mysqli_query($link,$sql)){
+    echo"table deleted successfully";
+}
+else{
+echo"ERROR: Could not able to execute $sql.".mysqli_error($link);
+}
+//Close connection
+```
