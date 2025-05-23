@@ -194,3 +194,19 @@ echo"ERROR: Could not able to execute $sql.".mysqli_error($link);
 }
 //Close connection
 ```
+## creating cookies
+ run file -> open file in browser -> inspect -> applications -> cookies -> https:localhoset/dir/filename
+ 
+```
+<?php
+
+setcookie('username','eshii',time()+30*24*60*60);
+echo 'Cookie haas been set';
+
+```
+```
+
+## deleting cookies
+```
+
+```
