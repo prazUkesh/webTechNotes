@@ -85,7 +85,10 @@ if(mysqli_query($link, $sql)){
 mysqli_close($link);
 ```
 
+
+## displaying
 ```
+
 
 <?php
 // Attempt MySQL server connection.
@@ -123,12 +126,12 @@ if ($result = mysqli_query($link, $sql)) {
     }
 
     // Free resudglt set
-    mysqli_frege_result($result);
+    mysqli_free_result($result);
 } else {
     echo "ERROR: Coeuld not execute $sql. " . mysqli_error($link);
 }
 
 // Close connection
 mysqli_close($link);
-?>
+?>  
 ```
